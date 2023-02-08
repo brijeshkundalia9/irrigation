@@ -15,4 +15,4 @@ Get postman collection file from repository and execute below requests
 7. Fetch plots
 8. Fetch plots to be irrigated
 9. Assign sensor to plot
-10. Send irrigation to plot
+10. Send irrigation request to plot
