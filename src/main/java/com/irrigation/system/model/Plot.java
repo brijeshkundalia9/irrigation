@@ -25,6 +25,6 @@ public class Plot {
   @JoinColumn(name = "configuration_id", referencedColumnName = "id")
   private Configuration configuration;
 
-  private Status status;
+  private Status status = Status.MISSING_SENSOR;
   private int missingSensorAlert = 0;
 }

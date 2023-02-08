@@ -35,17 +35,24 @@ public class PlotController {
     return new ResponseEntity<>(plot, HttpStatus.CREATED);
   }
 
-  @PutMapping
-  public ResponseEntity<Plot> updatePlot(@RequestBody Plot plotBody) {
-    Plot plot = plotService.updatePlot(plotBody);
+  @PutMapping(value = "/{plot_id}")
+  public ResponseEntity<Plot> updatePlot(@PathVariable(value = "plot_id") String plotId,
+      @RequestBody Plot plotBody) {
+    Plot plot = plotService.updatePlot(plotId, plotBody);
     return new ResponseEntity<>(plot, HttpStatus.OK);
   }
 
-  @PutMapping(value =  "/{plot_id}/configure")
+  @PutMapping(value = "/{plot_id}/configure")
   public ResponseEntity<Plot> configurePlot(@PathVariable(value = "plot_id") String plotId,
       @RequestBody Configuration configuration) {
     Plot plot = plotService.configurePlot(plotId, configuration);
     return new ResponseEntity<>(plot, HttpStatus.OK);
+  }
+
+  @PostMapping(value = "/{plot_id}/assign/sensor")
+  public ResponseEntity<?> assignSensor(@PathVariable(value = "plot_id") String plotId) {
+    plotService.assignSensor(plotId);
+    return new ResponseEntity<>(HttpStatus.ACCEPTED);
   }
 
 }

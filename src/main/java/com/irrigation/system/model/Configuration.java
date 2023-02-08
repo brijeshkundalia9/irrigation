@@ -16,7 +16,7 @@ public class Configuration {
   @GeneratedValue
   private UUID id;
   private CropType cropType;
-  private Long reqTimeToIrrigate;
+  private Long reqTimeAfterLastIrrigate;
   private Long lastIrrigationStart;
   private Long lastIrrigationEnd;
 }
