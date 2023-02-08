@@ -8,6 +8,7 @@
 
 --------------------------
 Get postman collection file from repository and execute below requests
+
 4. Create a plot (or may be few)
 5. Update a plot
 6. Configure a plot
