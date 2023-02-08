@@ -1,0 +1,115 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Irrigation",
+		"_postman_id": "de8bdfa9-29ce-98e2-dcfb-326e0dd0eb01",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch plots",
+			"request": {
+				"url": "localhost:8080/plot",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create a plot",
+			"request": {
+				"url": "localhost:8080/plot",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"size\": 101,\n        \"unit\": \"AREA\"\n    }\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Configure a plot",
+			"request": {
+				"url": "localhost:8080/plot/b1bda203-aa1c-4850-a079-9e202cc83800/configure",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n    \t\"cropType\": \"RICE\",\n        \"reqTimeAfterLastIrrigate\": 100,\n        \"lastIrrigationStart\": 100,\n        \"lastIrrigationEnd\": 102\n    }\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update a plot",
+			"request": {
+				"url": "localhost:8080/plot/b1bda203-aa1c-4850-a079-9e202cc83800",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n    \t\"id\": \"c16180f7-fe45-4385-aa7b-27129f3c803f\",\n        \"size\": 101,\n        \"unit\": \"AREA\"\n    }\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch plots to be irrigated",
+			"request": {
+				"url": "localhost:8080/sensor/irrigation/plots",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Send request to irrigate",
+			"request": {
+				"url": "localhost:8080/sensor/irrigate/plot/b1bda203-aa1c-4850-a079-9e202cc83800",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Assign a sensor to plot",
+			"request": {
+				"url": "localhost:8080/plot/b1bda203-aa1c-4850-a079-9e202cc83800/assign/sensor",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
